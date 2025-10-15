@@ -1,0 +1,82 @@
+*{font-family: "NanumSquareRoundR"; color: #333; vertical-align: top;} /* width:1028px*/
+@font-face{
+  font-family: "NanumSquareRoundR";
+  src: url('../font/NanumSquareRoundR.eot') format('embedded-opentype'),
+  url('../font/NanumSquareRoundR.woff') format("woff"),
+  url('../font/NanumSquareRoundR.ttf') format('truetype');
+}
+
+ .review{width:100%; height: 50px; position:relative; overflow: hidden;} /*박스에 릴레이티브와 넘치는 것 가리기*/
+ .review > a > img{width:1920px; height: 50px; position:absolute; top:0; left:50%; transform: translatex(-50%); z-index: 10;} /*이미지에 앱솔루트와 가로값 수정*/
+ .btn{width: 20px; height: 20px; cursor: pointer; position: absolute; top:30%; left:95%; z-index:20;
+       float: right; margin-right: 30px; margin-top:0px;background:#000; border-radius: 3px;  transform: translateX(-95%);}
+
+ #header_wrap{width: 1028px; display: table;  margin:0 auto;
+              padding-top: 20px;  position: relative; }
+ .logo{width:200px; height: 50px;
+      float: left; position: absolute; top:20px; left:50%; transform: translatex(-50%); z-index: 10;}
+ .logo> a> img{width: 220px; height: 50px;}
+
+ .login> a{float: left; margin-left: 13px; font-weight:800; font-size: 11.5pt;}
+ .login{float: right; }
+ .login> a:hover{text-decoration: underline;}
+
+ .gnb{margin-top: 70px;}
+ .gnb>li{width:205.6px; height:40px; float: left;
+       text-align: center; font-size: 14pt; line-height: 40px;}
+ .gnb>li:hover{color: #ff8833; text-decoration: underline; font-weight: 800;}
+
+ #banner_wrap{width:100%; height:407px; position: relative; z-index: 0; overflow: hidden;}
+ .banner{ width:300%; height:407px; margin-left:-100%;
+    position: absolute; top:0; left:0; z-index: 5; }
+ .banner >li { width:33.33%;height: 407px; position: relative; z-index: 0; float:left; overflow: hidden;}/*부모 가로값때문에 옆으로 안 붙음 가로값 줘야함*/
+ .banner > li >a{ width: 1920px; height:407px; position: absolute; top:0; left:50%;
+              z-index: 10; transform: translateX(-50%); display: block;} /*%로 했으면 배너도 %로 해야 함 딱 안 떨어지더라도*/
+ .button{position: absolute; top:50%; transform: translateY(-50%); z-index: 600; display: none; cursor: pointer;}
+ .prev{left:300px; }
+ .next{right:300px;}
+ .prev > img {width:45px; height: 85px; opacity: 0.5;}
+ .next > img { width:45px; height: 85px; opacity: 0.5;}
+ .bullet{display: table; overflow: hidden; position: absolute; bottom:15px; left:50%; transform: translateX(-50%); z-index: 25;}
+ .bullet>li{float: left; width: 10px; height: 10px; border: 1px solid #fff; border-radius: 8px;
+             margin-left: 10px; cursor: pointer; transition: all 0.3s;}
+ .bullet>li.on{background: #fff; width: 20px; height: 10px;}
+
+ .con_text{width: 1028px; overflow: hidden;  margin: 0 auto; font-size: 14pt; margin-top: 60px;}
+ .left{float: left; font-weight: 800; }
+ .right{float: right; }
+ .right > li{float: left; margin-left: 10px; cursor: pointer;}
+ .right > li:hover{text-decoration: underline; font-weight: 800;}
+ .right > li:first-child{font-weight: 800;}
+
+ #contents{width:1028px; display:  table; overflow: hidden; margin:20px auto; }
+ .con{width:248px; height: 350px; position: relative; float: left;  overflow: hidden;
+    margin-right: 12px; margin-bottom: 60px;}
+ .con > a {position: absolute; top:0; left:0; z-index: 10; width:248px; height:300px; border: 1px solid #bc9b58;
+            display: block; box-sizing: border-box;}
+ .img_wrap{width:248px; height:300px; position: relative;
+             top:0; left:0; z-index: 5; overflow: hidden; }
+ .img_wrap > img {position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);}
+ .non{margin-right: 0;}
+ .con > a:last-child>img{position: absolute; top:0; left: 0; z-index: 50;}
+  span{ font-size:11.5pt; color: #ccc; text-decoration: line-through; line-height: 25px;}
+  figcaption { margin-top:3px; width:248px; height: 50px; float: left; font-size: 14pt; font-weight: 800; text-align: center; line-height: 25px;}
+ .con > a > figure > .img_wrap { width: 248px; height: 300px; position:absolute; top:0; left:0; background: orange; overflow: hidden;}
+
+ #footer{ width: 100%; display: table; overflow: hidden; background: #f9d07d; }
+ .footer_wrap{width:1028px; display: table; margin: 0 auto; margin-bottom: 50px;}
+ .logo_wrap{float: left; margin-top: 40px;}
+ .logo2{float: left;}
+ .logo2> a> img{width: 160px; height: 40px;}
+ .sns_wrap{float: right;display: table; overflow: hidden; margin-top: 26px;}
+ .sns > li {float: left; margin: 5px;}
+ .sns > li:last-child{margin-right: 0;}
+ .name{color: #72675e; margin-top: 5px;  padding-left:11px; box-sizing: border-box;
+   display: table; overflow: hidden; line-height: 25px; font-size: 11pt; font-weight: 700;}
+ .center > li {font-weight: 800; font-size: 15pt; color: #72675e; margin-top: 40px;}
+ .center > li:nth-child(2) {font-size: 22pt; color: #72675e; margin-top: 0;}
+ .center > li:last-child{font-size: 12pt;}
+
+
+
+ .clear{clear: both;}

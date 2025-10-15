@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="IE=Edge,chrome=IE9" equiv="X-UA-Compatible" http="">
+    <link rel="stylesheet" href="css/reset.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">  </script>
+    <script src="script/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js" type="text/javascript"></script>
+    <title> 김가영 포트폴리오 </title>
+    <style media="screen">
+    html,body{background: #fff187; width:100%; height:100%; }
+    @font-face{
+      font-family: "BinggraeMelona";
+      src: url(font/BinggraeMelona.otf.eot) format('embedded-opentype'),
+      url("font/BinggraeMelona.woff") format("woff"),
+      url(font/BinggraeMelona.otf) format('truetype');
+    }
+    @font-face{
+      font-family: "KoolBean";
+      src: url(font/KoolBean.eot) format('embedded-opentype'),
+      url("font/KoolBean.woff") format("woff"),
+      url(font/KoolBean.ttf) format('truetype');
+    }
+    body{font-family: "BinggraeMelona"; color: #b98d3e;}
+
+   #header{width: 100%; height:90px; background:rgba(100%,100%,100%,0.5); position: fixed; top:0; left: 0; z-index:20;}
+   .header_wrap{width: 1000px; height: 100%; margin: 0 auto; margin-left:950px;}
+   .header_wrap > li {float: left; margin: 30px 0 0 50px; font-size: 24pt; cursor: pointer;}
+
+    .wrap{width: 100%; height:100%; overflow: hidden;
+      position: relative; z-index: 0; }
+    .key{ width: 226px; height: 558px; cursor: pointer;
+      position:absolute; top:330px; left:50%; transform: translatex(-50%);}
+    .p{font-size: 30pt;  position: absolute; top:50%; right:700px;transform: translateY(-50%);}
+    .shadow{width: 150px; height: 70px; position:absolute; top:778px;
+        margin-left: 30px; left:50%; transform: translatex(-50%);
+        }
+    .shadow > img{width: 150px; height: 70px;}
+    .key2{width:148px; height: 471px; position: absolute; top:250px; left:57.5%;
+        transform: translatex(-57.5%);display: none;}
+
+
+      .bullet{overflow: hidden;}
+      .bullet > li{font-size:40px; letter-spacing: 2px; cursor: pointer; line-height: 57px;}
+      .bullet > li > a {position: fixed; right:-200px; transform: translateY(-50%); width:300px; height: 57px;
+                       border-bottom: 2px solid #845327;padding-bottom:10px; padding-top:10px;}
+      .h_span {margin-left: -2px;}
+      .i_span {margin-left: 11px;}
+      .w_span {margin-left: -5px;}
+      .bullet > li:first-child > a{top:300px;}
+      .bullet > li:nth-child(2) > a{top:400px;}
+      .bullet > li:nth-child(3) > a{top:500px;}
+      .bullet > li:last-child > a{top:600px;}
+      .bullet > li>a.on>img:last-child{opacity: 1; transition: all 0.5s; }
+      .bullet > li>a>img:last-child{position: absolute; left:0; opacity: 0; transition: all 0.5s;
+    }
+
+
+      #wrap2{width: 900px; height: 100%; margin:0 auto; position:relative;}
+      #wrap2 > img { margin-top:120px; position:absolute; z-index: 5;}
+      .skill{ width: 150px;  height: 150px; float: left;
+         position:absolute; top:64%; left:8.5%; z-index: 10;}
+      #wrap2 > p {position: absolute; top:69.5%;  z-index: 10; font-size: 22pt; color: #af915b;}
+      .p1{ left:13.5%; }
+      .p2{ left:37%; }
+      .p3{ left:59%; }
+      .p4{ left:79%; }
+      #pho{left:32%;}
+      #htm{left:53.8%;}
+      #jvs{left:74%;}
+
+      #wrap3{width: 1350px; position: relative; display: table; overflow: hidden; margin: 0 auto;}
+      .title1{width:180px; height: 60px; position: absolute; top:15%; left: 50%;
+        transform: translateX(-50%); font-size: 25pt; font-weight: 800; text-align: center;}
+      .g_wrap{width: 1200px; height: 600px; position: absolute;
+         top:50%; left:50%; margin-top:-230px; margin-left: -610px;}
+      .p5{width:130px; height: 35px; position: absolute; top:-40px; left:200px;
+        font-size: 19pt; opacity: 0.7;}
+      .ill_album{width: 500px; height: 600px;  float: left;
+        position: relative; overflow: hidden;}
+      .ill_album > ul {width: 2500px; height: 600px; position: absolute; left:-500px;}
+      .ill_album > ul > li{width:500px; height: 100%; float: left;}
+      .ill_album > ul > li > img {height: 100%; width: 100%;}
+      .g_wrap > button{background-color: transparent; width: 50px; height: 48px;
+        position: absolute; top:50%;}
+      .g_wrap > button > img {width: 100%;}
+      :focus{outline:0;}
+      #ill_p{left:-60px;}
+      #ill_n{left:510px;}
+      .p6{right:170px;width:130px; height: 35px; position: absolute; top:-40px;
+        font-size: 19pt; opacity: 0.7;}
+      .pho_album{width: 500px; height: 600px;  float: left;
+        position: relative; overflow: hidden; margin-left: 200px;}
+      .pho_album > ul{width: 1500px; height: 600px; position: absolute; left:-500px;}
+      .pho_album > ul > li{width:500px; height: 100%; float: left;}
+      .pho_album > ul > li > img {height: 100%; width: 100%;}
+      #pho_p{right:510px;}
+      #pho_n{right:-60px;}
+
+      #wrap4{width:1260px; margin: 0 auto; padding-top:400px; box-sizing: border-box;}
+      .title2{width:180px; height: 60px; position: absolute; top:15%; left: 50%;
+        transform: translateX(-50%); font-size: 25pt; font-weight: 800; text-align: center;}
+      .nwrap{width:100%; margin-top: 20px; display: table; overflow: hidden;}
+      .web_d{width: 400px; display: table; overflow: hidden; float: left; margin:10px; transition: all 0.5s;
+           box-sizing: border-box; cursor: pointer; position: relative;}
+      .web_d > img{width: 100%;}
+      .big{width:550px; }
+      .small{width:275px; margin-top: 40px;}
+      .web_d > a > p {display: none; margin-left: 90px; line-height: 30px; font-size: 15pt;}
+
+    </style>
+
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var timer = 0;
+        function runSlide(){
+        timer = window.setInterval(function() {
+           $('.key').animate({marginTop:'-20px'},600, function(){
+             $(this).animate({marginTop:0},600);  });/*key animate end*/
+         },600); /*setInterval end*/
+          }
+           runSlide();
+         $('.key').on('click',function(){
+           clearInterval(timer);
+           $('.key2').fadeIn(800);
+           $('.p').fadeOut(300);
+         });
+
+         setInterval(function() {
+            $('.shadow > img').animate({width:'200px'},600, function(){
+              $(this).animate({width:'150px'},600);
+              });/*shadow animate end*/
+          },600); /*setInterval end*/
+
+
+          $('.header_wrap > li > a').on('click',function(){
+            if (animated) return false ;
+            var targetId = $(this).attr('href');
+            var offset = $(targetId).offset();
+            animated = true;
+            $('body,html').animate({scrollTop:offset.top},400,function(){
+              animated = false;
+            });
+            });
+
+
+            $('.bullet > li > a').on('mouseenter',function(){
+              $(this).animate({right:'0'},600);
+            }).on('mouseleave',function(){
+              $(this).animate({right:'-200px'},300);
+            });
+
+
+          $('.bullet > li > a').on('click',function(){
+            if (animated) return false ;
+            var targetId = $(this).attr('href');
+            var offset = $(targetId).offset();
+            animated = true;
+            $('body,html').animate({scrollTop:offset.top},400,function(){
+              animated = false;
+            });
+            $('.bullet > li > a').removeClass('on');
+            $(this).addClass('on');
+            page = parseInt(targetId.substr(-1)) -1;
+            return false;
+          });
+
+          var windowHeight = $(window).height();
+          var page = 1;
+          var scrollHeight = 0;
+          var pageCount = $('.wrap').length;
+          var animated = false;
+
+          $('body').on('mousewheel DOMMouseScroll', function(e){
+          e.preventDefault();
+          if (animated){ return };
+          var event = e.originalEvent;
+          var delta = 0;
+          if (event.detail)
+             delta = event.detail;
+          else
+             delta =event.wheelDelta;
+          if (delta < 0) {
+             if (page == pageCount) {
+                return;
+             }else {
+               page ++;
+             }
+          }else {
+            if (page == 1) {
+               return;
+            }else {
+              page --;
+            }
+          }
+          scrollHeight = windowHeight *(page-1);
+          $('.bullet > li > a').removeClass('on');
+          $('.bullet > li').eq(page-1).find('a').addClass('on');
+          animated = true;
+          $('html,body').animate({scrollTop : scrollHeight},300,function(){
+          animated = false;
+          });
+          });
+
+          var bar = new ProgressBar.Path('#heart-path1', {
+          easing: 'easeInOut',
+          duration: 20000
+         });
+           bar.set(0);
+           bar.animate(0.95);
+           var bar = new ProgressBar.Path('#heart-path2', {
+           easing: 'easeInOut',
+           duration: 20000
+          });
+            bar.set(0);
+            bar.animate(0.9);
+            var bar = new ProgressBar.Path('#heart-path3', {
+            easing: 'easeInOut',
+            duration: 20000
+           });
+             bar.set(0);
+             bar.animate(0.86);
+             var bar = new ProgressBar.Path('#heart-path4', {
+             easing: 'easeInOut',
+             duration: 20000
+            });
+              bar.set(0);
+              bar.animate(0.86);
+
+          $('#ill_n').on('click',function(){
+            $('.ill_album > ul').fadeOut(150, function(){
+              $(this).find('li:first-child').appendTo(this);
+              $(this).fadeIn(0);
+            });
+          });
+          $('#ill_p').on('click',function(){
+            $('.ill_album > ul').fadeOut(150, function(){
+              $(this).find('li:last-child').prependTo(this);
+              $(this).fadeIn(0);
+            });
+          });
+          $('#pho_n').on('click',function(){
+            $('.pho_album > ul').fadeOut(150, function(){
+              $(this).find('li:first-child').appendTo(this);
+              $(this).fadeIn(0);
+            });
+          });
+          $('#pho_p').on('click',function(){
+            $('.pho_album > ul').fadeOut(150, function(){
+              $(this).find('li:last-child').prependTo(this);
+              $(this).fadeIn(0);
+            });
+          });
+
+          $('.web_d').on('mouseenter',function(){
+           $(this).stop(true).addClass('big').siblings().addClass('small');
+           $(this).find('a').find('p').stop(true).fadeIn(0);
+            });/*box enter end*/
+             $('.web_d').on('mouseleave',function(){
+               $(this).stop(true).removeClass('big').siblings().removeClass('small');
+               $(this).find('a').find('p').stop(true).fadeOut(0);
+             });/*box leave end*/
+
+      });/*document end*/
+    </script>
+  </head>
+
+  <body>
+    <div id="header">
+      <ul class="header_wrap">
+        <li> <a href="#wrap1"> Home </a></li>
+        <li> <a href="#wrap2"> Introduce </a></li>
+        <li> <a href="#wrap3"> Gallery </a></li>
+        <li> <a href="#wrap4"> Web Design </a></li>
+      </ul>
+    </div><!--header end-->
+    <div class="wrap" id="wrap1">
+      <div class="key">
+        <img src="img/key.png" alt="key">
+      </div><!--key end-->
+      <div class="key2">
+        <img src="img/key2.png" alt="key2">
+      </div><!--key2 end-->
+      <div class="p">
+        CLILCK !
+      </div>
+      <div class="shadow">
+        <img src="img/12.png" alt="shadow">
+      </div><!--shadow end-->
+    </div><!--wrap end-->
+    <div  class="wrap" id="wrap2">
+      <img src="img/4.png" alt="프로필이미지">
+      <p class="p1">90%</p> <p class="p2">85%</p> <p class="p3">80%</p> <p class="p4">80%</p>
+      <div class="skill"  id="ill">
+         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
+                       <path fill-opacity="0" stroke-width="1" stroke="#bbb" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+                       <path id="heart-path1" fill-opacity="0" stroke-width="3" stroke="#ffd07d" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+         </svg>
+      </div><!--ill end-->
+      <div class="skill" id="pho">
+         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
+                       <path fill-opacity="0" stroke-width="1" stroke="#bbb" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+                       <path id="heart-path2" fill-opacity="0" stroke-width="3" stroke="#ffd07d" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+         </svg>
+      </div><!--pho end-->
+      <div class="skill" id="htm">
+         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
+                       <path fill-opacity="0" stroke-width="1" stroke="#bbb" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+                       <path id="heart-path3" fill-opacity="0" stroke-width="3" stroke="#ffd07d" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+         </svg>
+      </div><!--htm end-->
+      <div class="skill" id="jvs">
+         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100 100">
+                       <path fill-opacity="0" stroke-width="1" stroke="#bbb" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+                       <path id="heart-path4" fill-opacity="0" stroke-width="3" stroke="#ffd07d" d="M81.495,13.923c-11.368-5.261-26.234-0.311-31.489,11.032C44.74,13.612,29.879,8.657,18.511,13.923  C6.402,19.539,0.613,33.883,10.175,50.804c6.792,12.04,18.826,21.111,39.831,37.379c20.993-16.268,33.033-25.344,39.819-37.379  C99.387,33.883,93.598,19.539,81.495,13.923z"/>
+         </svg>
+      </div><!--jvs end-->
+    </div><!--wrap2 end-->
+
+    <div  class="wrap" id="wrap3">
+
+        <p class="title1"> Gallery </p>
+
+      <div class="g_wrap">
+        <button type="button" id="pho_p" name="button"> <img src="img/p.png" alt="포토샵버튼"> </button>
+        <button type="button" id="pho_n" name="button"> <img src="img/n.png" alt="포토샵버튼"> </button>
+        <button type="button" id="ill_p" name="button"> <img src="img/p.png" alt="일러스트버튼"> </button>
+        <button type="button" id="ill_n" name="button"> <img src="img/n.png" alt="일러스트버튼"> </button>
+
+        <p class="p5"> illustration </p>
+      <div class="ill_album">
+        <ul>
+          <li> <img src="img/natalie.jpg" alt="폴리곤아트"> </li>
+          <li> <img src="img/typo.jpg" alt="파이포그래피"> </li>
+          <li> <img src="img/ed.jpg" alt="납작복숭아"> </li>
+          <li> <img src="img/ariel.jpg" alt="네온아리엘"> </li>
+          <li> <img src="img/kakao.jpg" alt="카카오프랜즈"> </li>
+          <li> <img src="img/banana.jpg" alt="캔디바맛우유"> </li>
+          <li> <img src="img/uplus.jpg" alt="유플러스"> </li>
+        </ul>
+       </div>
+        <p class="p6"> Photoshop </p>
+        <div class="pho_album">
+        <ul>
+          <li> <img src="img/unpa.jpg" alt="언파치약"> </li>
+          <li> <img src="img/oh.jpg" alt="오늘의집"> </li>
+          <li> <img src="img/unpa.jpg" alt="언파치약"> </li>
+          <li> <img src="img/oh.jpg" alt="오늘의집"> </li>
+        </ul>
+      </div><!--pho_album end-->
+      </div><!--g_wrap end-->
+    </div><!--wrap3 gallery end-->
+
+    <div  class="wrap" id="wrap4">
+      <p class="title2"> Web Design </p>
+      <div class="nwrap">
+       <div class="web_d">
+        <img src="img/m_1.png" alt="1">
+        <a href="portfolio1/main.html"><p>메인 페이지</p></a>
+        <a href="portfolio1/sub1.html"><p>서브 페이지1</p></a>
+        <a href="portfolio1/sub2.html"><p>서브 페이지2</p></a>
+       </div><!--web_d end-->
+       <div class="web_d">
+        <img src="img/m_2.png" alt="2">
+        <a href="portfolio2/main.html"><p>메인 페이지</p></a>
+        <a href="portfolio2/sub.html"><p>서브 페이지</p></a>
+       </div><!--web_d end-->
+       <div class="web_d">
+        <img src="img/m_3.png" alt="3">
+        <a href="portfolio3/main.html"><p>메인 페이지</p></a>
+        <a href="portfolio3/sub.html"><p>서브 페이지</p></a>
+       </div><!--web_d end-->
+      </div><!--nwrap end-->
+    </div><!--wrap4 end-->
+
+  <ul class="bullet">
+    <li>
+      <a class="on" href="#wrap1">
+       <img src="img/lock22.png" alt=""> <span class="h_span"> H ome </span>
+       <img src="img/lock11.png" alt="">
+     </a>
+    </li>
+    <li>
+      <a href="#wrap2">
+       <img src="img/lock22.png" alt=""> <span class="i_span"> I  ntroduce </span>
+       <img src="img/lock11.png" alt="">
+      </a>
+    </li>
+    <li>
+      <a href="#wrap3">
+       <img src="img/lock22.png" alt=""> <span> G allery </span>
+       <img src="img/lock11.png" alt="">
+      </a>
+    </li>
+    <li>
+      <a href="#wrap4">
+       <img src="img/lock22.png" alt=""> <span class="w_span"> W eb Design </span>
+       <img src="img/lock11.png" alt="">
+      </a>
+    </li>
+  </ul><!--bullet end-->
+  </div>
+  </body>
+</html>

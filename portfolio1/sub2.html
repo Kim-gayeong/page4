@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js">  </script>
+    <script src="script/jquery-ui-1.10.3.custom.min.js"></script>
+    <title>크래빗 상품페이지</title>
+    <style media="screen">
+    html, body{background:}
+     *{ font-family: '나눔스퀘어라운드'; color: #333; vertical-align: top;} /* width:1028px*/
+      .review{width:100%; height: 50px; position:relative; overflow: hidden;} /*박스에 릴레이티브와 넘치는 것 가리기*/
+      .review > a > img{width:1920px; height: 50px; position:absolute; top:0; left:50%; transform: translatex(-50%); z-index: 10;} /*이미지에 앱솔루트와 가로값 수정*/
+      .btn{width: 20px; height: 20px; cursor: pointer; position: absolute; top:30%; left:95%; z-index:20;
+            float: right; margin-right: 30px; margin-top:0px;background:#000; border-radius: 3px;  transform: translateX(-95%);}
+
+      .line_wrap{width: 100%; display: table; border-bottom: 1px solid #c2c2c2;}
+      #header_wrap{width: 1028px; display: table;  margin:0 auto;
+                   padding-top: 20px;  position: relative; }
+      .logo{width:200px; height: 50px;
+           float: left; position: absolute; top:20px; left:50%; transform: translatex(-50%); z-index: 10;}
+      .logo> a> img{width: 220px; height: 50px;}
+
+      .login> a{float: left; margin-left: 13px; font-weight:800; font-size: 11.5pt;}
+      .login{float: right; }
+      .login> a:hover{text-decoration: underline;}
+
+      .gnb{margin-top: 70px;}
+      .gnb>li{width:205.6px; height:40px; float: left;
+            text-align: center; font-size: 14pt; line-height: 40px;}
+      .gnb>li:hover{color: #ff8833; text-decoration: underline; font-weight: 800;}
+
+
+       .product{display: table; height: 540px; overflow: hidden; margin: 0 auto;  margin-top: 50px; }
+       .toy{width:494px; display: table; overflow: hidden; float: left;  }
+       .number{width:534px; height: 540px; float: left; padding-left: 20px; box-sizing: border-box;}
+
+       .number>li:first-child{font-size: 10pt; color: #888;}
+       .number>li:nth-child(2){font-size: 14pt; font-weight: 700; letter-spacing: 0.5px;}
+       .number>li:nth-child(3){font-size: 12pt; font-weight: 700;  letter-spacing: 0px;}
+       .number>li:nth-child(4){font-size: 12pt; font-weight: 800; letter-spacing: 0px; margin-top: 30px;}
+       .number>li:nth-child(5){font-size: 17.5pt; font-weight: 800; letter-spacing: 0.5px; color: #ff8833;}
+       .number>li:nth-child(5) > .span1{margin-left: 5px; font-size: 12pt; color: #c2c2c2; text-decoration: line-through;}
+       .span2{margin-left: 10px; font-size: 17pt; font-weight: 800; letter-spacing: 0px;}
+       .li_6{font-size: 12pt; font-weight: 800; letter-spacing: 0px; margin-top: 50px; }
+       .span3{font-size: 12pt; font-weight: 700; letter-spacing: 0px; margin-left: 70px;}
+       .li_7{font-size: 12pt;  font-weight: 700; letter-spacing: 0px; margin-left: 119px;}
+       .li_8{font-size: 12pt; font-weight: 800; letter-spacing: 0px; margin-top: 50px;}
+
+       .pro_wrap{width:1028px; display: table; overflow: hidden; margin:90px auto; font-size: 12pt; font-weight: 700;}
+       #product1:checked ~ .box1{ display: block;}
+       #product2:checked ~ .box2{ display: block;}
+       #product3:checked ~ .box3{ display: block;}
+       #product1:checked ~ .label1{background: #fff; color: #333;border: 1px solid #d1aa8a; border-bottom: 0;
+                   box-sizing: border-box;}
+       #product2:checked ~ .label2{background: #fff; color: #333; border: 1px solid #d1aa8a; border-bottom: 0;
+                   box-sizing: border-box;}
+       #product3:checked ~ .label3{background: #fff; color: #333; border: 1px solid #d1aa8a; border-bottom: 0;
+                   box-sizing: border-box;}
+       #product1, #product2, #product3{display: none;}
+       label{width:342.6px; height: 50px; background: #ffd4b2; color: #888; text-align: center; transition: all 0.8s;
+            cursor: pointer; display: block; float: left; line-height: 50px; border-bottom: 1px solid #d1aa8a;}
+       label:hover{border: 1px solid #d1aa8a; border-bottom: 0;
+                   box-sizing: border-box; background: #fff; color: #333;}
+
+      .con_1{width:1028px; height: 664px;  margin: 0 auto; margin-bottom: 90px;}
+      .con_1 >img {float: left;}
+      .con_2{width: 1028px; display: table; margin: 0 auto; }
+
+      .warning{width: 1028px; display: table; margin: 50px auto; }
+      .warn{width: 928px; height: 35px; background: #dbb177; letter-spacing: 2px; margin:0 auto; color: #fff;
+            border-radius: 17px; text-align: center; font-weight: 800; line-height: 35px; font-size: 16pt; margin-top: 70px;}
+      .warn > img {margin-top:5px;}
+      .warn2{height: 160px; text-align: left; font-weight: 800;
+           line-height: 160px; margin-top: 20px; margin-left: 250px; font-size: 14pt;}
+      .warn2>li{ line-height: 30px;}
+
+      .joe{height: 50px;}
+      .deli{width: 928px; height: 438px; margin:120px auto; background: #fdedc9; padding-left: 80px; box-sizing: border-box;}
+      .deli > li {width: 928px; height: 146px; text-align: left; font-weight: 800; line-height: 35px; font-size: 16pt;}
+      .deli > li:first-child{padding-top: 40px; box-sizing: border-box; }
+      .title{padding-top:30px; box-sizing: border-box; }
+      .del1{width: 90px; height: 50px; margin-left: 50px;}
+      .del2{margin-left: 128px;}
+      .deli > li:nth-child(2){padding-top: 10px; box-sizing: border-box;}
+      .del3{margin-left: 12px;}
+      .del4{margin-left: 158px;}
+      .title2{padding-top:10px; box-sizing: border-box;}
+
+
+
+
+      #footer{ width: 100%; display: table; overflow: hidden; background: #f9d07d; margin-top: 90px;}
+      .footer_wrap{width:1028px; display: table; margin: 0 auto; margin-bottom: 50px;}
+      .logo_wrap{float: left; margin-top: 40px;}
+      .logo2{float: left;}
+      .logo2> a> img{width: 160px; height: 40px;}
+      .sns_wrap{float: right;display: table; overflow: hidden; margin-top: 26px;}
+      .sns > li {float: left; margin: 5px;}
+      .sns > li:last-child{margin-right: 0;}
+      .name{color: #72675e; margin-top: 5px;  padding-left:11px; box-sizing: border-box;
+        display: table; overflow: hidden; line-height: 25px; font-size: 11pt; font-weight: 700;}
+      .center > li {font-weight: 800; font-size: 15pt; color: #72675e; margin-top: 40px;}
+      .center > li:nth-child(2) {font-size: 22pt; color: #72675e; margin-top: 0;}
+      .center > li:last-child{font-size: 12pt;}
+      .jang{width: 300px; height:450px; float: left; margin-top: 90px;}
+      .jang > li {float: left;  width: 130px; height: 45px; font-size: 17pt; letter-spacing: 0px; text-align: center; line-height: 45px;
+        background: #f7ab30; border: 1px solid #f7ab30; border-radius: 7px; color: #fff;}
+      .jang > li:last-child {background: #fff; color: #f7ab30; margin-left: 30px;}
+
+
+
+      .clear{clear: both;}
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $('.btn').on('click',function(){
+          $('.review').slideUp(300);
+        });
+
+        $('.con').on('mouseenter',function(){
+          var figure = $(this).find('a').find('.img_wrap').find('img');
+         $(figure).stop(true).animate({width:'258px'},200);
+        });
+        $('.con').on('mouseleave',function(){
+          var figure = $(this).find('a').find('.img_wrap').find('img');
+         $(figure).stop(true).animate({width:'248px'},200);
+        });
+
+
+      });/*document end*/
+    </script>
+  </head>
+  <body>
+
+   <div class="review">
+    <a href="#"><img src="images/main-review.jpg" alt=""></a>
+     <div class="btn">
+     <img src="images/close.png" alt="">
+    </div><!-- button end-->
+   </div><!-- review end-->
+  <div class="line_wrap">
+    <div id="header_wrap">
+     <div class="logo">
+      <a href="http://html/portfolio1/main.html"><img src="images/logo1.png" alt=""></a>
+    </div><!-- logo end-->
+      <ul class="login">
+        <a href="#"> <li> 회원가입 </li> </a>
+        <a href="#"> <li> 로그인 </li> </a>
+      </ul> <!-- login end-->
+      <ul class="gnb">
+        <li> <a href="#"> 전체상품 </a></li>
+        <li> <a href="http://html/portfolio1/sub1.html">크래빗 </a></li>
+        <li> <a href="#">아두이노 & 크래프트 </a></li>
+        <li> <a href="#">묻고 답하기 </a></li>
+        <li> <a href="#">공지사항 </a></li>
+      </ul>
+   </div><!-- header_wrap end-->
+  </div><!-- line_wrap end-->
+
+    <div class="product">
+      <div class="toy">
+        <img src="images/sub.jpg" alt="">
+      </div>
+      <ul class="number">
+       <li> 상품번호 : 4315786619 </li>
+       <li> 크래빗 빙글빙글 풍차 DIY 스마트 토이 </li>
+       <li> # 내가 만드는 움직이는 나무 장난감 </li>
+       <li> 회원할인가 </li>
+       <li> 18% <span class="span1"> 17,000원 </span> <span class="span2"> 13,900원 </span> </li>
+       <li class="li_6"> 배송비  <span class="span3"> 3,000원 </span> </li>
+       <li class="li_7"> (70,000원 이상 구매시 무료/ 제주, 도서지역 추가 5,000원) </li>
+       <ul class="jang">
+         <li> <a href="#"> 구매하기 </a> </li>
+         <li> <a href="#"> 장바구니 </a> </li>
+       </ul>
+      </ul>
+
+    </div> <!--product end-->
+
+    <div class="pro_wrap">
+     <input type="radio" name="bu1" id="product1" value="" checked>
+     <input type="radio" name="bu1" id="product2" value="">
+     <input type="radio" name="bu1" id="product3" value="">
+     <label class="label1" for="product1">상품 설명</label>
+     <label class="label2" for="product2">상품 리뷰</label>
+     <label class="label3" for="product3">상품 문의</label>
+      <div class="clear">
+      </div>
+    </div >
+
+     <div class="con_1">
+       <img src="images/d.jpg" alt="">
+       <img src="images/f.jpg" alt="">
+     </div>
+     <div class="con_2">
+       <img src="images/x.jpg" alt="">
+     </div>
+     <div class="warning">
+       <div class="warn">
+         <img src="images/check.png" alt="">
+         안전사고 예방을 위한 안내
+          </div>
+         <ul class="warn2">
+           <li> ▷ 안전을 위하여 보호자가 아이와 함께 설명서를 읽고 조립하세요. </li>
+           <li> ▷ ‘크래빗’은 8세 이상 어린이를 위한 장남감입니다. </li>
+           <li> ▷ 작은 부품이 포함되어 있으므로 아이가 입에 넣거나 삼키지 않도록 주의하세요. </li>
+           <li> ▷ 움직이는 장난감을 만질 경우 다칠 수 있으므로 주의하세요. </li>
+           <li> ▷ 움직이는 장난감에 손, 머리카락, 옷 등이 끼일 수 있으므로 주의하세요. </li>
+           <li> ▷ 사용자 임의로 개조하거나 변형시켰을 경우 고장날 수 있으므로 주의하세요. </li>
+         </ul>
+         <div class="warn ">
+           <img src="images/check.png" alt="">
+             참조
+            </div>
+           <ul class="warn2 joe">
+             <li> ▷ 제품 설명서에 따라 제품을 사용하십시오.  </li>
+             <li> ▷ 나중에 참조할 수 있도록 설명서를 보관하십시오.  </li>
+           </ul>
+           <div class="warn">
+             <img src="images/check.png" alt="">
+               사용상 주의사항
+              </div>
+             <ul class="warn2">
+               <li> ▷ 화재의 위험이 있으니 불에 가까이 하지 마십시오. </li>
+               <li> ▷ 입에 넣거나 빨지 마십시오. </li>
+               <li> ▷ 직사광선, 고온, 습기가 많은 곳에 보관하지 마십시오. </li>
+               <li> ▷ 제품이 변형될 수 있으므로 물에 직접 닿지 않게 주의하십시오. </li>
+               <li> ▷ 부품이 파손될 수 있으니 조립시 과도한 힘을 가하지 마십시오. </li>
+               <li> ▷ 던지거나 밟는 등 충격을 주지 마십시오. </li>
+             </ul>
+       </div>
+       <ul class="deli">
+         <li class="title">  배송공지 <span class="del1">  ◦ 오후 3시까지 결제확인 된 주문은 당일 출고됩니다. <br> </span>
+                        <span class="del2">  ◦ 제주도를 포함한 도서산간 지역은 추가배송비 입금요청이 있을 수 있습니다. </span> </li>
+         <li> 교환 및 반품 공지 <span class="del3">  ◦ 상품 수령일로부터 7일 이내 반품/환불 가능합니다. <br> </span>
+                        <span class="del4">  ◦ 상품 개봉 및 훼손/분실 시에는 반품이 불가능합니다. <br> </span>
+                        <span class="del4">  ◦ 단순 변심인 경우 교환/반품 시 추가 배송비가 발생할 수 있습니다. </span> </li>
+         <li  class="title2"> 고객센터 <span class="del1">  ◦ 상품문의는 1:1문의로 남겨주시면 반나절 이내로 답변드립니다. <br>  </span>
+                            <span class="del2">  ◦ 전화 : 042- 364- 9390 (10:00~18:00), 토/일/공휴일 휴무 <br>  </span>
+                            <span class="del2">  ◦ 홈페이지 : <a href="#"> http://www.finnelab.com </a> </span> </li>
+       </ul>
+
+
+    <div id="footer">
+    <div class="footer_wrap">
+      <div class="logo_wrap">
+        <div class="logo2">
+          <a href="#"><img src="images/logo1.png" alt=""></a>
+        </div><!-- logo end-->
+        <div class="clear"></div>
+         <ul class="center">
+          <li> 고객센터 </li>
+          <li> 1588-3819 </li>
+          <li> <a href="#">  1:1 문의 바로 가기 </a> </li>
+          <li> <img src="images/notice.png" alt=""> 반품 배송비, 반품 배송주소 등은 해당 상품 페이지 내 안내를 참고해주세요. </li>
+         </ul>
+        <div class="clear"></div>
+      </div><!--logo_wrap end-->
+      <div class="sns_wrap">
+        <ul class="sns">
+          <li> <a href="#"> <img src="images/sns-b1.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="images/sns-n1.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="images/sns-u1.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="images/sns-f1.png" alt=""> </a> </li>
+          <li> <a href="#"> <img src="images/sns-i1.png" alt=""> </a> </li>
+        </ul>
+        <div class="clear"></div>
+
+        <div class="name">
+          상호명 : 주식회사 피니랩(사업자/ 법인사업자) <br>
+          대표자 : 이용하 <br>
+          사업자등록번호 : 4638700615 통신판매업 <br>
+          통신판매업번호 : 2018 대전유성-0300 <br>
+          사업장 소재지 : (우:34054) 대전광역시 유성구 <br>
+           유성대로 1646 사이언스파크 101호 <br>
+        <a href="#">  e-mail : finnegan_lee@naver.com  </a> <br>
+          결제도용신고 1588-3816 <br>
+        </div>
+      </div><!-- sns_wrap end-->
+
+    </div><!--footer_wrap end-->
+  </div><!--footer end-->
+</body>
+</html>
